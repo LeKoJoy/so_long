@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mlx_init.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alschnei <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 14:32:16 by alschnei          #+#    #+#             */
-/*   Updated: 2025/03/24 14:32:17 by alschnei         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "includes/so_long.h"
 
 void	count_elements(t_mlxgame *game, char **map, char element)
@@ -64,13 +52,13 @@ void	load_assets(t_mlxgame *game)
 	int	w;
 	int	h;
 
-	game->wall = mlx_xpm_file_to_image(game->mlx, "assets/Wall.xpm", &w, &h);
-	game->floor = mlx_xpm_file_to_image(game->mlx, "assets/Floor.xpm", &w, &h);
+	game->wall = mlx_xpm_file_to_image(game->mlx, "assets/1.xpm", &w, &h);
+	game->floor = mlx_xpm_file_to_image(game->mlx, "assets/0.xpm", &w, &h);
 	game->player = mlx_xpm_file_to_image(game->mlx,
-			"assets/Player.xpm", &w, &h);
+			"assets/p.xpm", &w, &h);
 	game->collectable = mlx_xpm_file_to_image(game->mlx,
-			"assets/Collectable.xpm", &w, &h);
-	game->exit = mlx_xpm_file_to_image(game->mlx, "assets/Exit.xpm", &w, &h);
+			"assets/c.xpm", &w, &h);
+	game->exit = mlx_xpm_file_to_image(game->mlx, "assets/e.xpm", &w, &h);
 	if (!game->wall || !game->floor || !game->player
 		|| !game->collectable || !game->exit)
 	{
